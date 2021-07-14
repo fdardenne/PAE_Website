@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card my-5">
+            <div class="card-body">
+                <h5 class="card-title text-center">Sign Up</h5>
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <div class="form-label-group">
+                        {{form.username.label()}}
+
+                        {% if form.username.errors %}
+                            {{form.username(class="form-control is-invalid" ,placeholder="Username")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.username.errors %}
+                                    <span> {{error}} </span>
+                                {%endfor%}
+                            </div>
+                        {% else %}
+                            {{form.username(class="form-control" ,placeholder="Username")}}
+                        {% endif %}
+                    </div>
+
+                    <div class="form-label-group">
+                        {{form.email.label()}}
+
+                        {% if form.email.errors %}
+                            {{form.email(class="form-control is-invalid" ,placeholder="Email")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.email.errors %}
+                                    <span> {{error}} </span>
+                                {%endfor%}
+                            </div>
+                        {% else %}
+                            {{form.email(class="form-control" ,placeholder="Email")}}
+                        {% endif %}   
+                    </div>
+
+                    <div class="form-label-group">
+                        {{form.password.label()}}
+
+                        {% if form.password.errors %}
+                            {{form.password(class="form-control is-invalid")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.password.errors %}
+                                    <span> {{error}} </span>
+                                {%endfor%}
+                            </div>
+                        {% else %}
+                            {{form.password(class="form-control")}}
+                        {% endif %}
+                    </div>
+
+                    <div class="form-label-group mb-3">
+                        {{form.confirm_password.label()}}
+
+                        {% if form.confirm_password.errors %}
+                            {{form.confirm_password(class="form-control is-invalid")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.confirm_password.errors %}
+                                    <span> {{error}} </span>
+                                {%endfor%}
+                            </div>
+                        {% else %}
+                            {{form.confirm_password(class="form-control")}}
+                        {% endif %}
+                        
+                    </div>
+                    {{ form.submit(class="btn btn-lg btn-primary btn-block text-uppercase")}}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
