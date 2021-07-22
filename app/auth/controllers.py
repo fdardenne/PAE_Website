@@ -40,7 +40,7 @@ def register():
     if form.validate_on_submit():
 
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode("utf-8")
-        user = User(username=form.username.data, email=form.email.data, password=hashed_password)
+        user = User(username=form.username.data, email=form.email.data, password=hashed_password, inscription_year=form.inscription_year.data)
         db.session.add(user)
         db.session.commit()
         flash("Account created", "primary")
@@ -53,6 +53,7 @@ def register():
 @mod_auth.route("/auth/logout")
 def logout():
     if current_user.is_authenticated:
+        logout_user()
         return redirect(url_for("home.home"))
-    logout_user()
+    
     return redirect(url_for("home.home"))

@@ -1,0 +1,130 @@
+{
+    "Mathématiques": {
+        "header": "",
+        "course": {
+            "LBIR1212": {
+                "name": "Probabilités et statistiques (I)",
+                "cts": 4,
+                "quarter": "q1",
+                "teachers": "Patrick Bogaert",
+                "mandatory": true,
+                "prerequisite": ["LINFO1111", "LINFO1112"]
+            },
+            "LINFO1113": {
+                "name": "Algorithmique numérique",
+                "cts": 6,
+                "quarter": "q1",
+                "teachers": "Loïc Quertenmont",
+                "mandatory": true,
+                "prerequisite": ["LINFO1101", "LINFO1111", "LINFO1112"]
+            },
+            "LINFO1114": {
+                "name": "Mathématiques discrètes",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "Marco Saerens",
+                "mandatory": true,
+                "prerequisite": ["LINFO1112"]
+            }
+        }
+    },
+
+    "Formation en informatique": {
+        "header": "",
+        "course": {
+            "LINFO1104": {
+                "name": "Concepts des langages de programmation",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "Peter Van Roy",
+                "mandatory": true,
+                "prerequisite": ["LINFO1101"]
+            },
+            "LINFO1123": {
+                "name": "Calculabilité, logique et complexité",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "Yves Deville",
+                "mandatory": true,
+                "prerequisite": ["LEPL1402", "LINFO1114"]
+            },
+            "LEPL1402": {
+                "name": "Informatique 2",
+                "cts": 5,
+                "quarter": "q1",
+                "teachers": "Ramin Sadre , Pierre Schaus",
+                "mandatory": true,
+                "prerequisite": ["LINFO1101"]
+            },
+            "LEPL1503": {
+                "name": "Projet 3",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "Olivier Bonaventure (coord.) , Axel Legay",
+                "mandatory": true,
+                "prerequisite": ["LINFO1101"]
+            }
+        }
+    },
+
+    "Cours en sciences humaines, économie et gestion": {
+        "header": "",
+        "course": {
+            "LECGE1222": {
+                "name": "Microéconomie",
+                "cts": 5,
+                "quarter": "q1 ou q2",
+                "teachers": "Johannes Johnen , Arastou Khatibi , François Maniquet",
+                "mandatory": true,
+                "prerequisite": ["LCOPS1115"]
+            }
+        }
+    },
+
+    "Cours de langues": {
+        "header": "Un test de placement est organisé en début de Bloc annuel 1 et 2. En fonction de la note obtenue, le parcours est différencié. Les étudiants qui obtiennent une note supérieure ou égale à 16/20 au test conservent cette note et peuvent mettre un autre cours de langue à leur programme, sous forme de cours additionnel qui interviendra dans leur moyenne de cycle seulement en cas de réussite (document à fournir au SEPL).",
+        "course": {
+            "LANGL1282": {
+                "name": "Anglais pour informaticiens II",
+                "cts": 3,
+                "quarter": "q1",
+                "teachers": "Jean-Luc Delghust , Charlotte Peters (coord.) , Marc Piwnik (coord.)",
+                "mandatory": true
+            }
+        }
+    },
+
+    "Cours de sciences religieuses pour étudiants en sciences exactes": {
+        "header": "Les étudiants choisissent un cours parmi:",
+        "course": {
+            "LTECO2100": {
+                "name": "Sociétés, cultures, religions : lectures bibliques",
+                "cts": 2,
+                "quarter": "q1",
+                "teachers": "Hans Ausloos",
+                "mandatory": true
+            },
+            "LTECO2300": {
+                "name": "Sociétés, cultures, religions : questions éthiques",
+                "cts": 2,
+                "quarter": "q1",
+                "teachers": "Marcela Lobo Bustamante",
+                "mandatory": true
+            },
+            "LTHEO2840": {
+                "name": "Science et foi chrétienne",
+                "cts": 2,
+                "quarter": "q1",
+                "teachers": "Benoît Bourgine",
+                "mandatory": true
+            },
+            "LTECO2200": {
+                "name": "Sociétés, cultures, religions : questions humaines fondamentales",
+                "cts": 2,
+                "quarter": "q1 ou q2",
+                "teachers": "Régis Burnet , Dominique Martens",
+                "mandatory": true
+            }
+        }
+    }
+}

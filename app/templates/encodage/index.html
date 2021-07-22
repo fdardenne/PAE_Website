@@ -1,0 +1,75 @@
+
+{% extends 'base.html' %}
+{% import 'sidebar.html' as sidebar %}
+{% import 'dynamicTable.html' as dynamicTable %}
+
+{% block content %}
+<div class="container">
+  <div class="py-5 text-center">
+    <h2>Encodage de mon parcours</h2>
+    <p class="lead">Sélectionnez ci-dessous les cours que vous avez crédités durant votre parcours</p>
+  </div>
+
+
+  <div class="row">
+
+    {{ sidebar.sidebar(year,available_endpoints, user_cts) }}
+
+    <div class="col-md-9 order-md-1">
+      <h4 class="mb-3" id="title">{{year}}</h4>
+
+      {% if year == "mineure" %}
+        <input class="mb-3" type="checkbox" value="" id="appSinf" form="courseFormOther" {% if current_user.minor == "appsinf"%} checked {% endif %}>
+        Je suis la mineure en "Approfondissement en Sciences informatiques"
+          
+        <form id="courseFormOther" method="post"> 
+          <div class="input-group input-group-lg">
+            <span class="input-group-text">Mineure en </span>
+            <input type="text" name="minor_title" class="form-control" aria-label="Sizing example input" {% if current_user.minor != "appsinf"%} value="{{current_user.minor}}" {% endif %}>
+          </div>
+          {{dynamicTable.dynamicTable(prev_courses)}}
+        </form>
+      {% endif %}
+
+      
+
+      <form id="courseForm" method="post" >       
+        <div class="row">
+          
+          {% if data %}
+            {% for category in data %}
+              <h6 class="my-0 mb-3">{{category}}</h6>
+              {% for sigle in data[category]["course"] %}
+                <div class="boxed-check-group boxed-check-success col mt-2"">
+                  <label class="boxed-check">
+                      <input class="boxed-check-input" type="checkbox" name="{{sigle}}" cts="{{ data[category]["course"][sigle]["cts"] }}" {% if sigle in prev_courses %} checked {% endif %} >
+                        <div class="boxed-check-label card" style="width: 15rem;">
+                          <div class="card-body">
+                            <h5 class="card-title">{{sigle}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ data[category]["course"][sigle]["name"]}}</h6>
+                            <p class="card-subtitle mb-2 text-muted">{{ data[category]["course"][sigle]["cts"]}} crédits - {{ data[category]["course"][sigle]["teachers"]}}</h6>
+                            {% if data[category]["course"][sigle]["prerequisite"] %}
+                            <footer class="footer">Prérequis: {{ ", ".join(data[category]["course"][sigle]["prerequisite"])}}</footer>
+                            {% endif %}
+                          </div>
+                        </div>
+                        </label>
+                  </label>
+                </div>
+                {% endfor %}
+            {% endfor %}
+          {% endif %}
+        </div>
+
+
+
+        {% if year == "hors_programme" %}
+          <h6 class="my-0 mb-3">Cours hors programme non listés</h6>
+          {{dynamicTable.dynamicTable(prev_courses_other)}}
+        {% endif %}
+
+      </form>
+    </div>
+</div>
+
+{% endblock %}

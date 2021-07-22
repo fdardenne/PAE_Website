@@ -1,0 +1,58 @@
+{% macro dynamicTable(prev_courses) -%}
+<table id="minorTable" class="dynamicTable table order-list">
+    <thead>
+        <tr>
+            <td>Sigle</td>
+            <td>Titre</td>
+            <td>Crédits</td>
+        </tr>
+    </thead>
+    <tbody>
+      {% if prev_courses %}
+        {% for courses in prev_courses %}
+        <tr>
+            <td class="col-sm-4">
+                <input type="text" minlength="9" maxlength="9" name="sigle{{loop.index-1}}" class="form-control" value="{{courses.course_acronym}}" />
+            </td>
+            <td class="col-sm-4">
+                <input type="text" minlength="1" maxlength="150" name="titre{{loop.index-1}}"  class="form-control" value="{{courses.course_title}}"/>
+            </td>
+            <td class="col-sm-3">
+                <input type="number" name="cts{{loop.index-1}}" min="1" max="15" class="form-control minorCts" value="{{courses.cts}}"/>
+            </td>
+            {% if loop.index > 1 %}
+              <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>
+            {% endif %}
+            <td class="col-sm-2"><a class="deleteRow"></a>
+
+            </td>
+        </tr>
+        {% endfor %}
+      {% else %}
+        <tr>
+          <td class="col-sm-4">
+              <input type="text" minlength="9" maxlength="9" name="sigle0" class="form-control" />
+          </td>
+          <td class="col-sm-4">
+              <input type="text" minlength="1" maxlength="150" name="titre0"  class="form-control"/>
+          </td>
+          <td class="col-sm-3">
+              <input type="number" name="cts0" min="1" max="15" class="form-control minorCts" />
+          </td>
+          <td class="col-sm-2"><a class="deleteRow"></a>
+
+          </td>
+      </tr>
+      {% endif %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5" style="text-align: center;">
+                <input type="button" class="btn btn-lg btn-block " id="addrow" value="Ajouter un cours" />
+            </td>
+        </tr>
+        <tr>
+        </tr>
+    </tfoot>
+</table>
+{%- endmacro %}

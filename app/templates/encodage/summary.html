@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% import 'sidebar.html' as sidebar %}
+
+{% block content %}
+<div class="container">
+  <div class="py-5 text-center">
+    <h2> WIP - Encodage de mon parcours</h2>
+    <p class="lead">Voici les crédits que vous avez acquis durant votre parcours, vérifiez leurs exactitudes avant
+      l'encodage du PAE</p>
+  </div>
+
+
+  <div class="row">
+
+    {{ sidebar.sidebar(year,available_endpoints, user_cts) }}
+
+
+    <div class="col-md-9 order-md-1">
+
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>Inscription en </td>
+            <td>SINF1BA</td>
+          </tr>
+
+          <tr>
+            <td>Inscription en mineure possible (>= 30)</td>
+            <td>Oui</td>
+          </tr>
+          <tr>
+            <td>Anticipation de cours en master possible (>= 150 crédits)</td>
+            <td>Oui. Avec un PAE comportant un total d'un maximum de 60 crédits</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+
+  {% endblock %}

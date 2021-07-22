@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% import 'sidebar.html' as sidebar %}
+{% import 'dynamicTable.html' as dynamicTable %}
+
+{% block content %}
+<div class="container">
+  <div class="py-5 text-center">
+    <h2>WIP - Encodage de mon PAE</h2>
+    <p class="lead">Encodage du PAE avec suggestions</p>
+  </div>
+
+  <div class="row">
+
+    <div class="alert alert-primary" role="alert">
+      <h4 class="alert-heading">Légende pour l'encodage du PAE</h4>
+
+      <p>Pour votre PAE nous vous conseillons de prendre les cours arborant une bordure bleue.</p>
+      <hr>
+      <p>Les cours arborant une bordure grise sont des cours disponible mais pas forcément conseillé pour ce PAE</p>
+      <hr>
+      <p>Les cours dont les prérequis ne sont pas respectés sont grisés</p>
+      <hr>
+      <p>WIP</p>
+    </div>
+
+
+
+    {{ sidebar.sidebar(year,available_endpoints, user_cts) }}
+
+    <div class="col-md-9 order-md-1">
+      <form id="courseForm" method="post">
+        <div class="row">
+
+          <h6 class="my-0 mb-3">Exemple prototype</h6>
+              
+                <div class="boxed-check-group boxed-check-advised-success col mt-2"">
+                  <label class="boxed-check-advised boxed-check">
+                      <input class="boxed-check-input" type="checkbox" name="LINFO999" cts="10" >
+                        <div class="boxed-check-label card" style="width: 15rem;">
+                          <div class="card-body">
+                            <h5 class="card-title">LINFO999</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Exemple de cours conseillé</h6>
+                            <p class="card-subtitle mb-2 text-muted">10 crédits - </h6>
+                          </div>
+                        </div>
+                        </label>
+                  </label>
+                </div>
+
+                <div class="boxed-check-group boxed-check-advised-success col mt-2"">
+                  <label class="boxed-check-advised boxed-check">
+                      <input class="boxed-check-input" type="checkbox" name="LINFO999" cts="10" disabled>
+                        <div class="boxed-check-label card" style="width: 15rem;">
+                          <div class="card-body">
+                            <h5 class="card-title">LINFO888</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Exemple de cours ne respectant pas les prérequis</h6>
+                            <p class="card-subtitle mb-2 text-muted">10 crédits - </h6>
+                          </div>
+                        </div>
+                        </label>
+                  </label>
+                </div>
+
+                <div class="boxed-check-group boxed-check-success col mt-2"">
+                  <label class="boxed-check boxed-check">
+                      <input class="boxed-check-input" type="checkbox" name="LINFO999" cts="10">
+                        <div class="boxed-check-label card" style="width: 15rem;">
+                          <div class="card-body">
+                            <h5 class="card-title">LINFO777</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Exemple de cours que l'étudiant peut prendre</h6>
+                            <p class="card-subtitle mb-2 text-muted">10 crédits - </h6>
+                          </div>
+                        </div>
+                        </label>
+                  </label>
+                </div>
+
+
+
+
+          {% if data %}
+          {% for category in data %}
+          {% if data[category]|length > 0 %}
+          <h6 class="my-0 mb-3">{{category}}</h6>
+          {% for sigle in data[category] %}
+          <div class="boxed-check-group boxed-check-success col mt-2"">
+                  <label class=" boxed-check boxed-check">
+            <input class="boxed-check-input" type="checkbox" name="{{sigle}}" cts="{{ data[category][sigle][" cts"] }}"
+              {% if sigle in prev_courses %} checked {% endif %}>
+
+
+            <div class="boxed-check-label card" style="width: 15rem;">
+              <div class="card-body">
+
+                <h5 class="card-title">{{sigle}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ data[category][sigle]["name"]}}</h6>
+
+                <p class="card-subtitle mb-2 text-muted">{{ data[category][sigle]["cts"]}} crédits - {{
+                  data[category][sigle]["teachers"]}}</h6>
+
+                  {% if data[category][sigle]["prerequisite"] %}
+                <footer class="footer">Prérequis: {{ ", ".join(data[category][sigle]["prerequisite"])}}</footer>
+                {% endif %}
+              </div>
+            </div>
+            </label>
+            </label>
+          </div>
+          {% endfor %}
+
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+        </div>
+
+
+
+
+        <h6 class="my-0 mb-3">Cours non listés</h6>
+        {{dynamicTable.dynamicTable(prev_courses)}}
+
+      </form>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

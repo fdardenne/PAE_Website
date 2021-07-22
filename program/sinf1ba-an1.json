@@ -1,0 +1,116 @@
+{
+    "Mathématiques": {
+        "header": "",
+        "course": {
+            "LINFO1111": {
+                "name": "Analyse",
+                "cts": 7,
+                "quarter": "q1",
+                "teachers": "François Glineur , Roland Keunings",
+                "mandatory": true
+            },
+            "LINFO1112": {
+                "name": "Algèbre",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "Christophe Craeye , Thomas Peters (supplée Enrico Vitale)",
+                "mandatory": true
+                
+            }
+        }
+    },
+
+    "Cours scientifiques et techniques": {
+        "header": "",
+        "course": {
+            "LINFO1140": {
+                "name": "Bases électroniques de l'informatique",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "Jean-Didier Legat",
+                "mandatory": true
+            }
+        }
+    },
+
+    "Cours en sciences humaines, économie et gestion.": {
+        "header": "",
+        "course": {
+            "LCOPS1115": {
+                "name": "Economie politique",
+                "cts": 5,
+                "quarter": "q1",
+                "teachers": "Tanguy Isaac , Arastou Khatibi",
+                "mandatory": true
+            },
+            "LESPO1113": {
+                "name": "Sociologie et anthropologie des mondes contemporains",
+                "cts": 5,
+                "quarter": "q1 ou q2",
+                "teachers": "Joseph Amougou , Julien Charles , Jean De Munck , Hugues Draelants",
+                "mandatory": true
+            },
+            "LESPO1122": {
+                "name": "Fondements du droit public et privé",
+                "cts": 5,
+                "quarter": "q1 ou q2",
+                "teachers": "Pierre Bazier , Nicolas Bonbled , Arnaud Hoc , Thibaut Slingeneijer de Goeswin",
+                "mandatory": true
+            },
+            "LCOPS1124": {
+                "name": "Philosophie",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "",
+                "mandatory": true
+            }
+        }
+    },
+
+    "Formation en informatique": {
+        "header": "",
+        "course": {
+            "LINFO1101": {
+                "name": "Introduction à la programmation",
+                "cts": 5,
+                "quarter": "q1",
+                "teachers": "Kim Mens , Siegfried Nijssen , Charles Pecheur",
+                "mandatory": true
+            },
+            "LINFO1103": {
+                "name": "Introduction à l'algorithmique",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "Pierre Dupont",
+                "mandatory": true
+            },
+            "LINFO1001": {
+                "name": "Projets en informatique 1",
+                "cts": 6,
+                "quarter": "q1",
+                "teachers": "Etienne Riviere",
+                "mandatory": true
+            },
+            "LINFO1002": {
+                "name": "Projets en informatique 2",
+                "cts": 5,
+                "quarter": "q1",
+                "teachers": "",
+                "mandatory": true
+            }
+        }
+    },
+
+    "Cours de langues": {
+        "header": "Un test de placement est organisé en début de Bloc annuel 1 et 2. En fonction de la note obtenue, le parcours est différencié. Les étudiants qui obtiennent une note supérieure ou égale à 16/20 au test conservent cette note et peuvent mettre un autre cours de langue à leur programme, sous forme de cours additionnel qui interviendra dans leur moyenne de cycle seulement en cas de réussite (document à fournir au SEPL).",
+        "course": {
+            "LANGL1181": {
+                "name": "Anglais pour informaticiens I",
+                "cts": 2,
+                "quarter": "q1",
+                "teachers": "Jean-Luc Delghust",
+                "mandatory": true
+            }
+        }
+    }
+}

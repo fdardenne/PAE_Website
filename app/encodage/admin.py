@@ -2,14 +2,13 @@ from app import f_admin, db
 from flask_admin import BaseView, expose, AdminIndexView
 from flask import redirect, url_for, request, flash
 from flask_login import current_user
-from app.auth.models import User
+from app.encodage.models import SucceededCourse
 from flask_admin.contrib.sqla import ModelView
 
 
-class UserModelView(ModelView):
+class EncodageModelView(ModelView):
 
-    
-    column_searchable_list = ['username', 'email']
+    column_searchable_list = ['username']
 
     def is_accessible(self):
         return current_user.is_authenticated and current_user.is_admin
@@ -24,4 +23,4 @@ class UserModelView(ModelView):
             return redirect(url_for("home.home"))
 
 
-f_admin.add_view(UserModelView(User, db.session))
+f_admin.add_view(EncodageModelView(SucceededCourse, db.session))

@@ -1,0 +1,69 @@
+{
+    "Approfondissement en sciences informatiques bloc2": {
+        "header": "",
+        "course": {
+            "LINFO1212": {
+                "name": "Projet d'approfondissement en sciences informatiques",
+                "cts": 5,
+                "quarter": "q1",
+                "teachers": "Siegfried Nijssen",
+                "mandatory": true
+            },
+            "LINFO1311": {
+                "name": "Interface homme-machine",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "Jean Vanderdonckt",
+                "mandatory": true
+            },
+            "LINFO1210": {
+                "name": "Systèmes d'information et gestion de projets informatiques",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "Manuel Kolp",
+                "mandatory": true
+            },
+            "LINFO1225": {
+                "name": "Conception orientée objet et gestion de données (non dispensé en 2020-2021)",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "Kim Mens",
+                "mandatory": false
+            } 
+        }
+    },
+
+    "Approfondissement en sciences informatiques bloc3": {
+        "header": "",
+        "course": {
+            "LINFO1122": {
+                "name": "Méthodes de conception de programmes",
+                "cts": 5,
+                "quarter": "q1",
+                "teachers": "Charles Pecheur",
+                "mandatory": true
+            },
+            "LINFO1131": {
+                "name": "Concepts de programmation concurrente / Concurrent programming concepts",
+                "cts": 5,
+                "quarter": "q1",
+                "teachers": "Peter Van Roy",
+                "mandatory": true
+            },
+            "LLSMF2013": {
+                "name": "Data Analytics applied in Business",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "Manuel Kolp , Marco Saerens",
+                "mandatory": false
+            },
+            "LINMA1702": {
+                "name": "Modèles et méthodes d'optimisation I",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "François Glineur",
+                "mandatory": false
+            }
+        }
+    }
+}

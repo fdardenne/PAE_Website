@@ -39,6 +39,21 @@
                     </div>
 
                     <div class="form-label-group">
+                        {{form.inscription_year.label()}}
+
+                        {% if form.inscription_year.errors %}
+                            {{form.inscription_year(class="form-control is-invalid", type="number",placeholder="Date d'inscription en bac1 SINF ")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.inscription_year.errors %}
+                                    <span> {{error}} </span>
+                                {%endfor%}
+                            </div>
+                        {% else %}
+                            {{form.inscription_year(class="form-control" ,type="number", placeholder="Date d'inscription en BAC1 SINF")}}
+                        {% endif %}   
+                    </div>
+
+                    <div class="form-label-group">
                         {{form.password.label()}}
 
                         {% if form.password.errors %}

@@ -1,0 +1,21 @@
+{
+    "Hors programme": {
+        "header": "",
+        "course": {
+            "LEPL2351": {
+                "name": "Dynamique des groupes",
+                "cts": 3,
+                "quarter": "q1",
+                "teachers": "Jacqmot Christine; Oestges Claude; Raucent Benoît; Wertz Vincent;",
+                "mandatory": false
+            },
+            "LEPL2352": {
+                "name": "Dynamique des groupes",
+                "cts": 3,
+                "quarter": "q2",
+                "teachers": "Jacqmot Christine; Oestges Claude; Raucent Benoît; Wertz Vincent;",
+                "mandatory": false
+            }
+        }
+    }
+}

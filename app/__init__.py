@@ -37,7 +37,7 @@ class MyIndexAdminView(AdminIndexView):
             flash("You don't have the right to access this page.", "danger")
             return redirect(url_for("home.home"))
 
-f_admin = Admin(app, name='FlaskCMS', template_mode='bootstrap3', index_view=MyIndexAdminView())
+f_admin = Admin(app, name='PAE SINF', template_mode='bootstrap3', index_view=MyIndexAdminView())
 
 
 # To handle 404 pages
@@ -48,8 +48,12 @@ def not_found(error):
 
 from app.home.controllers import mod_home as home
 from app.auth.controllers import mod_auth as auth
+from app.encodage.controllers import mod_encodage as encodage
+from app.pae.controllers import mod_pae as pae
 
 app.register_blueprint(home)
 app.register_blueprint(auth)
+app.register_blueprint(encodage)
+app.register_blueprint(pae)
 
 db.create_all()

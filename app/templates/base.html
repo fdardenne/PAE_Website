@@ -6,22 +6,64 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Boilerplate - {{title}}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='encodage/boxed-check.min.css') }}">
+
+    
+
+    <title>PAE SINF - {{title}}</title>
 
   </head>
 
   <body>
 
-    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">PAE SINF</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link {% if title == "Home" %} active {% endif %}" aria-current="page" href={{ url_for('home.home') }}>Home</a>
+            <a class="nav-link {% if title == "Mon parcours" %} active {% endif %}" href={{ url_for('encodage.bac', year="bac1") }}>Mon Parcours</a>
+            <a class="nav-link disabled" href="#" aria-disabled="true">Mon PAE</a>
+          </div>
+
+          <ul class="navbar-nav ms-auto">
+          {% if current_user.is_authenticated %}
+            {% if current_user.is_admin %}
+            <li class="nav-item">
+              <a class="nav-link" href={{ url_for('admin.index') }}>Admin</a>
+            </li>
+            {%endif%}
+          <li class="nav-item">
+            <a class="nav-link" href={{ url_for('auth.logout') }}>Logout</a>
+          </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('auth.login') }}" data-bs-target="#myModal" data-bs-toggle="modal">Se connecter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('auth.register') }}" data-bs-target="#myModal" data-bs-toggle="modal">S'enregistrer</a>
+            </li>
+          {% endif %}
+        </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <!-- NAVBAR
     <nav class="navbar navbar-dark navbar-expand-lg" style="background-color:#018BBA">
       <a class="navbar-brand" href="/">
-        <img src="{{ url_for('static', filename='home/images/logo/logo.png') }}" width="43" height="54" alt="Logo"> Logo
+        PAE SINF
       </a>
-
+      
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,9 +75,6 @@
           <li>
           <li class="nav-item active">
             <a class="nav-link" href={{ url_for('home.home') }}>Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">News</a>
           </li>
 
           {% if current_user.is_authenticated %}
@@ -61,8 +100,9 @@
         </ul>
 
       </div>
-    </nav>
+    </nav> -->
     <!-- END NAVBAR -->
+ 
 
     <div class="container-fluid">
       {% with messages = get_flashed_messages(with_categories=true) %}
@@ -81,15 +121,22 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous"></script>
+		
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
       crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
+
+      
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='encodage/checked.js') }}"></script>
+    <script src="{{ url_for('static', filename='encodage/dynamicTable.js') }}"></script>
+
   </body>
 
 </html>

@@ -1,0 +1,115 @@
+{
+    "Mathématiques": {
+        "header": "",
+        "course": {
+            "LEPL1109": {
+                "name": "Statistics and data sciences",
+                "cts": 5,
+                "quarter": "q1",
+                "teachers": "Donatien Hainaut , Laurent Jacques",
+                "mandatory": true,
+                "prerequisite": ["LBIR1212"]
+            }
+        }
+    },
+
+    "Cours scientifiques et techniques": {
+        "header": "",
+        "course": {
+            "LELEC1930": {
+                "name": "Introduction aux télécommunications",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "Jérôme Louveaux",
+                "mandatory": true,
+                "prerequisite": ["LINFO1140"]
+            }
+        }
+    },
+
+    "Formation en informatique": {
+        "header": "",
+        "course": {
+            "LINFO1115": {
+                "name": "Reasoning about a highly connected world: graph theory, game theory and networks",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "Peter Van Roy",
+                "mandatory": true,
+                "prerequisite": ["LINFO1114"]
+            },
+            "LINFO1121": {
+                "name": "Algorithmique et structures de données",
+                "cts": 5,
+                "quarter": "q1",
+                "teachers": "Schaus Pierre",
+                "mandatory": true,
+                "prerequisite": ["LEPL1402"]
+            },
+            "LINFO1252": {
+                "name": "Systèmes informatiques",
+                "cts": 5,
+                "quarter": "q1",
+                "teachers": "Riviere Etienne",
+                "mandatory": true,
+                "prerequisite": ["LEPL1402", "LEPL1503"]
+            },
+            "LINFO1341": {
+                "name": "Réseaux informatiques",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "Bonaventure Olivier",
+                "mandatory": true,
+                "prerequisite": ["LEPL1402"]
+            },
+            "LEPL1509": {
+                "name": "Projet 4 (en informatique)",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "Yves Deville",
+                "mandatory": false,
+                "prerequisite": ["LEPL1402"]
+            },
+            "LSST1001": {
+                "name": "IngénieuxSud",
+                "cts": 5,
+                "quarter": "q1 ou q2",
+                "teachers": "Stéphanie Merle , Jean-Pierre Raskin (coord.)",
+                "mandatory": false
+            },
+            "LINFO1361": {
+                "name": "Intelligence artificielle",
+                "cts": 5,
+                "quarter": "q2",
+                "teachers": "Yves Deville",
+                "mandatory": true
+            }
+        }
+    },
+
+    "Cours en sciences humaines, économie et gestion": {
+        "header": "",
+        "course": {
+            "LEPL1805": {
+                "name": "Gestion des personnes",
+                "cts": 3,
+                "quarter": "q1",
+                "teachers": "Bauduin Auquier , Philippe Henrotaux , Renaud Ronsse",
+                "mandatory": true
+            }
+        }
+    },
+
+    "Cours de langues": {
+        "header": "",
+        "course": {
+            "LANGL1383": {
+                "name": "Anglais pour informaticiens III",
+                "cts": 2,
+                "quarter": "q1",
+                "teachers": "Ahmed Adrioueche (coord.) , Charlotte Peters (coord.) , Françoise Stas",
+                "mandatory": true
+            }
+        }
+    }
+}
