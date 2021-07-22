@@ -45,10 +45,10 @@
           </li>
           {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('auth.login') }}" data-bs-target="#myModal" data-bs-toggle="modal">Se connecter</a>
+              <a class="nav-link" href="{{ url_for('auth.login') }}">Se connecter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('auth.register') }}" data-bs-target="#myModal" data-bs-toggle="modal">S'enregistrer</a>
+              <a class="nav-link" href="{{ url_for('auth.register') }}" >S'enregistrer</a>
             </li>
           {% endif %}
         </ul>
