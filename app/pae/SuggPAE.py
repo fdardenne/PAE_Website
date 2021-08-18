@@ -10,6 +10,7 @@ program_json = {
     "mineure": json.load(open(f"{dir_path}/../../program/mineure.json", encoding='utf-8')),
 }
 
+
 b1names = [sigle for category_courses in program_json["bac1"].values() for sigle in category_courses["course"] ]
 b2names = [sigle for category_courses in program_json["bac2"].values() for sigle in category_courses["course"] ]
 b3names = [sigle for category_courses in program_json["bac3"].values() for sigle in category_courses["course"] ]
@@ -74,7 +75,6 @@ def Bloc2(passed, corequis=False):
             for course in program[cat]["course"]:
                 if course not in passed:
                     ok=True
-                    print(course)
                     LP=program[cat]["course"][course]["prerequisite"]
                     for pre in LP:
                         if pre not in passed:
@@ -86,7 +86,7 @@ def Bloc2(passed, corequis=False):
                             for co in program[cat]["course"][course]["prerequisite"]:
                                 if co not in passed:
                                     msg=msg+ co + " "
-                                    if co not in courses:
+                                    if co not in courses and co not in b1names:
                                         courses.append(co)
                             if course not in courses:
                                 courses.append(course)
@@ -114,7 +114,7 @@ def Bloc3(passed, corequis=False):
                         for co in program[cat]["course"][course]["prerequisite"]:
                             if co not in passed:
                                 msg = msg + co + " "
-                                if co not in courses:
+                                if co not in courses and co not in b1names and co not in b2names:
                                     courses.append(co)
                         if course not in courses:
                             courses.append(course)
@@ -153,8 +153,6 @@ def genSugg(passed, primo, mineure):
     # respectant les prérequis avec un maximum de 60 crédits au total.  +  Formulaire d’autorisation pour les cours de Master dûment complété à
     # apporter à Mme C. Peeters (disponible sur Moodle - cours EPL1000)
     #  else if X < 180 anticipation master (slide 9): ADP
-    #               ->
-    # NB: lister d'abord les cours de bac2 puis si <70 cts de proposer, envoyer les cours de bac3 aussi
 
     credits_acquis = tocredits(passed) + creditsMineure(mineure)
     suggestion=[]
@@ -178,7 +176,6 @@ def genSugg(passed, primo, mineure):
         suggestion = suggestion + b2[0]
         msg = msg + b2[1]
 
-    #QUESTION: anticipation: mineure aussi?
     elif credits_acquis<60:
         if primo:
             if credits_acquis>=55:
@@ -194,7 +191,7 @@ def genSugg(passed, primo, mineure):
         msg = msg + b2[1]
 
         msg=msg+"N'oubliez pas d'ajouter vos cours de mineure.\n"
-        #QUESTION: cours de mineure proposé au même titre? au deuxième priorité?
+
     elif credits_acquis<105:
         prog_cts = 65
         msg = msg + "Votre PAE devrait représenter un total de " + str(prog_cts) + " cts.\n"
@@ -224,10 +221,10 @@ def genSugg(passed, primo, mineure):
             msg = msg+ "Prenez en priorité les cours du bloc 2 avant les cours du bloc 3.\n"
     elif credits_acquis<180-30:
         suggestion = Bloc1(passed)
-        b2=Bloc2(passed)
+        b2=Bloc2(passed, True)
         suggestion = suggestion+b2[0]
         msg=msg+b2[1]
-        b3 = Bloc3(passed)
+        b3 = Bloc3(passed, True)
         suggestion = suggestion + b3[0]
         msg = msg + b3[1]
         msg = msg + "N'oubliez pas d'ajouter vos cours de mineure.\n"
@@ -237,10 +234,10 @@ def genSugg(passed, primo, mineure):
         msg = msg + "Votre PAE devrait représenter un total de " + str(prog_cts) + " cts.\n"
     elif credits_acquis<180:
         suggestion = Bloc1(passed)
-        b2 = Bloc2(passed)
+        b2 = Bloc2(passed, True)
         suggestion = suggestion + b2[0]
         msg = msg + b2[1]
-        b3 = Bloc3(passed)
+        b3 = Bloc3(passed, True)
         suggestion = suggestion + b3[0]
         msg = msg + b3[1]
         msg = msg + "N'oubliez pas d'ajouter vos cours de mineure.\n"
@@ -305,3 +302,6 @@ available = genSugg(passed, False, mineure)
 print(available, tocredits(available[0]))
 print(available[2])
 """
+
+
+
