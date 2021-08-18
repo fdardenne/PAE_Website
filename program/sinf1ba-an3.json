@@ -17,10 +17,10 @@
         "header": "",
         "course": {
             "LELEC1930": {
-                "name": "Introduction aux télécommunications",
+                "name": "Introduction aux t\u00E9l\u00E9communications",
                 "cts": 5,
                 "quarter": "q2",
-                "teachers": "Jérôme Louveaux",
+                "teachers": "J\u00E9rôme Louveaux",
                 "mandatory": true,
                 "prerequisite": ["LINFO1140"]
             }
@@ -39,7 +39,7 @@
                 "prerequisite": ["LINFO1114"]
             },
             "LINFO1121": {
-                "name": "Algorithmique et structures de données",
+                "name": "Algorithmique et structures de donn\u00E9es",
                 "cts": 5,
                 "quarter": "q1",
                 "teachers": "Schaus Pierre",
@@ -47,7 +47,7 @@
                 "prerequisite": ["LEPL1402"]
             },
             "LINFO1252": {
-                "name": "Systèmes informatiques",
+                "name": "Syst\u00E8mes informatiques",
                 "cts": 5,
                 "quarter": "q1",
                 "teachers": "Riviere Etienne",
@@ -55,7 +55,7 @@
                 "prerequisite": ["LEPL1402", "LEPL1503"]
             },
             "LINFO1341": {
-                "name": "Réseaux informatiques",
+                "name": "R\u00E9seaux informatiques",
                 "cts": 5,
                 "quarter": "q2",
                 "teachers": "Bonaventure Olivier",
@@ -71,18 +71,20 @@
                 "prerequisite": ["LEPL1402"]
             },
             "LSST1001": {
-                "name": "IngénieuxSud",
+                "name": "Ing\u00E9nieuxSud",
                 "cts": 5,
                 "quarter": "q1 ou q2",
                 "teachers": "Stéphanie Merle , Jean-Pierre Raskin (coord.)",
-                "mandatory": false
+                "mandatory": false,
+                "prerequisite": []
             },
             "LINFO1361": {
                 "name": "Intelligence artificielle",
                 "cts": 5,
                 "quarter": "q2",
                 "teachers": "Yves Deville",
-                "mandatory": true
+                "mandatory": true,
+                "prerequisite": []
             }
         }
     },
@@ -95,7 +97,8 @@
                 "cts": 3,
                 "quarter": "q1",
                 "teachers": "Bauduin Auquier , Philippe Henrotaux , Renaud Ronsse",
-                "mandatory": true
+                "mandatory": true,
+                "prerequisite": []
             }
         }
     },
@@ -108,7 +111,8 @@
                 "cts": 2,
                 "quarter": "q1",
                 "teachers": "Ahmed Adrioueche (coord.) , Charlotte Peters (coord.) , Françoise Stas",
-                "mandatory": true
+                "mandatory": true,
+                "prerequisite": []
             }
         }
     }

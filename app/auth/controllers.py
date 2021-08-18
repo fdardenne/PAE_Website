@@ -23,7 +23,7 @@ def login():
             flash("Successfully logged in", "primary")
             login_user(user, remember=form.remember.data)
             nextpage = request.args.get("next")
-            return redirect(nextpage) if nextpage else redirect(url_for("home.home"))
+            return redirect(nextpage) if nextpage else redirect(url_for('encodage.bac', year="bac1"))
         else:
             # The flash function add the alert message in the frontend
             flash("Bad login", "danger")

@@ -118,7 +118,7 @@ def horsProgramPost():
         flash(f"Succès de l'ajout de vos cours crédités en {year}", "primary")
 
         if year_index >= len(available_endpoints)-1:
-            return redirect(url_for('encodage.summary'))
+            return redirect(url_for('pae.pae'))
         return redirect(url_for('encodage.bac', year=available_endpoints[year_index+1]))
     else:
         flash("Problème lors de l'ajout de vos cours.", "danger")

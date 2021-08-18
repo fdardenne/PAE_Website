@@ -13,7 +13,7 @@
                 "name": "Algèbre",
                 "cts": 5,
                 "quarter": "q2",
-                "teachers": "Christophe Craeye , Thomas Peters (supplée Enrico Vitale)",
+                "teachers": "Christophe Craeye , Thomas Peters (suppl\u00E9e Enrico Vitale)",
                 "mandatory": true
                 
             }
@@ -24,7 +24,7 @@
         "header": "",
         "course": {
             "LINFO1140": {
-                "name": "Bases électroniques de l'informatique",
+                "name": "Bases \u00E9lectroniques de l'informatique",
                 "cts": 5,
                 "quarter": "q2",
                 "teachers": "Jean-Didier Legat",
@@ -51,7 +51,7 @@
                 "mandatory": true
             },
             "LESPO1122": {
-                "name": "Fondements du droit public et privé",
+                "name": "Fondements du droit public et priv\u00E9",
                 "cts": 5,
                 "quarter": "q1 ou q2",
                 "teachers": "Pierre Bazier , Nicolas Bonbled , Arnaud Hoc , Thibaut Slingeneijer de Goeswin",
@@ -71,14 +71,14 @@
         "header": "",
         "course": {
             "LINFO1101": {
-                "name": "Introduction à la programmation",
+                "name": "Introduction \u00E0 la programmation",
                 "cts": 5,
                 "quarter": "q1",
                 "teachers": "Kim Mens , Siegfried Nijssen , Charles Pecheur",
                 "mandatory": true
             },
             "LINFO1103": {
-                "name": "Introduction à l'algorithmique",
+                "name": "Introduction \u00E0 l'algorithmique",
                 "cts": 5,
                 "quarter": "q2",
                 "teachers": "Pierre Dupont",
